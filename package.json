@@ -12,6 +12,7 @@
     "typescript": "^4.9.4"
   },
   "dependencies": {
-    "mongoose": "^6.8.1"
+    "mongoose": "^6.8.1",
+    "nanoid": "^4.0.0"
   }
 }
