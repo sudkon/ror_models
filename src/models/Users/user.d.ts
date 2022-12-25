@@ -23,9 +23,9 @@ export declare const userSchema: mongoose.Schema<any, mongoose.Model<any, any, a
     createdAt: NativeDate;
     updatedAt: NativeDate;
 } & {
+    status: "PENDINGAPPROVAL" | "BLOCKED" | "INACTIVE" | "ACTIVE";
     email: string;
     password: string;
-    status: "INACTIVE" | "ACTIVE" | "BLOCKED" | "PENDINGAPPROVAL";
     AccessLevel: string[];
     apps: mongoose.Types.ObjectId[];
     campaigns: mongoose.Types.ObjectId[];
@@ -37,4 +37,3 @@ export declare const userSchema: mongoose.Schema<any, mongoose.Model<any, any, a
     ReferralAdvertiserId?: string | undefined;
     TypeOfSupplier?: string | undefined;
 }>;
-export declare const userModel: mongoose.Model<IUser, {}, {}, {}, any>;

@@ -1,6 +1,6 @@
 import mongoose, { Document, model, Schema } from "mongoose";
-import { AppStatusTypes } from "../objects/customTypes";
-import { genetateNanoIdWithoutDash } from "../objects/functions";
+import { AppStatusTypes } from "../../objects/customTypes";
+import { genetateNanoIdWithoutDash } from "../../objects/functions";
 
 export interface IApps extends Document {
   _id: mongoose.Types.ObjectId;
@@ -88,7 +88,7 @@ export interface IApps extends Document {
 
   ResearchIndustries: mongoose.Types.ObjectId[];
 }
-const appSchema = new Schema(
+export const appSchema = new Schema(
   {
     appid: {
       type: String,
@@ -239,4 +239,4 @@ appSchema.methods.toJSON = function () {
   return obj;
 };
 
-export const appsModel = model<IApps>("Apps", appSchema);
+// export const appsModel = model<IApps>("Apps", appSchema);

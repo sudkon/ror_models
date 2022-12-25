@@ -23,11 +23,10 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.customTypes = exports.appsModel = exports.userSchema = exports.userModel = void 0;
-const user_1 = require("./src/models/user");
-Object.defineProperty(exports, "userModel", { enumerable: true, get: function () { return user_1.userModel; } });
-Object.defineProperty(exports, "userSchema", { enumerable: true, get: function () { return user_1.userSchema; } });
-const apps_1 = require("./src/models/apps");
-Object.defineProperty(exports, "appsModel", { enumerable: true, get: function () { return apps_1.appsModel; } });
-const customTypes = __importStar(require("./src/objects/customTypes"));
-exports.customTypes = customTypes;
+exports.UserSettings = exports.Users = exports.Apps = void 0;
+const Apps = __importStar(require("./src/models/Apps"));
+exports.Apps = Apps;
+const Users = __importStar(require("./src/models/Users"));
+exports.Users = Users;
+const UserSettings = __importStar(require("./src/models/UserSettings"));
+exports.UserSettings = UserSettings;

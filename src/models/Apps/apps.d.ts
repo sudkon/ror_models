@@ -1,5 +1,5 @@
 import mongoose, { Document } from "mongoose";
-import { AppStatusTypes } from "../objects/customTypes";
+import { AppStatusTypes } from "../../objects/customTypes";
 export interface IApps extends Document {
     _id: mongoose.Types.ObjectId;
     app_name: string;
@@ -85,4 +85,39 @@ export interface IApps extends Document {
     ResearchCategories: mongoose.Types.ObjectId[];
     ResearchIndustries: mongoose.Types.ObjectId[];
 }
-export declare const appsModel: mongoose.Model<IApps, {}, {}, {}, any>;
+export declare const appSchema: mongoose.Schema<any, mongoose.Model<any, any, any, any, any>, {}, {}, {}, {}, mongoose.ResolveSchemaOptions<{
+    timestamps: true;
+}>, {
+    createdAt: NativeDate;
+    updatedAt: NativeDate;
+} & {
+    appid: string;
+    app_name: string;
+    vc_name: string;
+    vc_value: number;
+    callBackUrl: string;
+    vc_mode: string;
+    api_key: string;
+    api_secret: string;
+    FingerprintCheckEnabled: boolean;
+    dqPointsByRorApplicable: boolean;
+    LucidSurveysEnabled: boolean;
+    RapidoReachSurveysEnabled: boolean;
+    InbrainSurveysEnabled: boolean;
+    DynataSurveysEnabled: boolean;
+    YourSurveysEnabled: boolean;
+    TolunaSurveysEnabled: boolean;
+    ShareRatio: number;
+    status: "PENDINGAPPROVAL" | "REQUEST_SENT" | "APPROVED" | "BLOCKED" | "REJECTED";
+    creator: mongoose.Types.ObjectId;
+    test: boolean;
+    App_Platform?: string | undefined;
+    App_Category?: string | undefined;
+    App_Store_URL?: string | undefined;
+    offerwallColor?: string | undefined;
+    offerwallLogo?: string | undefined;
+    maximumLOI?: number | undefined;
+    DQPoints?: number | undefined;
+    ResearchCategories?: any[] | undefined;
+    ResearchIndustries?: any[] | undefined;
+}>;

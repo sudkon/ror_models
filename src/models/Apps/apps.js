@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.appsModel = void 0;
+exports.appSchema = void 0;
 const mongoose_1 = require("mongoose");
-const functions_1 = require("../objects/functions");
-const appSchema = new mongoose_1.Schema({
+const functions_1 = require("../../objects/functions");
+exports.appSchema = new mongoose_1.Schema({
     appid: {
         type: String,
         required: true,
@@ -143,9 +143,9 @@ const appSchema = new mongoose_1.Schema({
     api_key: 1,
 });
 //Hide shareration property in FE apis
-appSchema.methods.toJSON = function () {
+exports.appSchema.methods.toJSON = function () {
     var obj = this.toObject();
     delete obj.ShareRatio;
     return obj;
 };
-exports.appsModel = (0, mongoose_1.model)("Apps", appSchema);
+// export const appsModel = model<IApps>("Apps", appSchema);
